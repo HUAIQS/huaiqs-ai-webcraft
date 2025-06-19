@@ -1,5 +1,4 @@
-
-import { Bot, BarChart3, Target, MessageSquareBot, Cog, TrendingUp } from 'lucide-react';
+import { Bot, BarChart3, Target, MessageSquareDot, Cog, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -27,7 +26,7 @@ const Services = () => {
       color: "from-green-500 to-emerald-500"
     },
     {
-      icon: MessageSquareBot,
+      icon: MessageSquareDot,
       title: "Chatbots Inteligentes",
       description: "Chatbots personalizados que mejoran la atención al cliente y generan más leads.",
       features: ["Atención 24/7", "Integración multicanal", "Aprendizaje continuo"],
