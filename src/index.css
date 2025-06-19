@@ -45,6 +45,11 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* HUAIQS Brand Colors */
+    --huaiqs-blue: #0066FF;
+    --huaiqs-purple: #6366F1;
+    --huaiqs-cyan: #06B6D4;
   }
 
   .dark {
@@ -98,11 +103,81 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-huaiqs-blue via-huaiqs-purple to-huaiqs-cyan bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent;
   }
   
   .hero-bg {
     background: linear-gradient(135deg, #0066FF 0%, #6366F1 50%, #06B6D4 100%);
+  }
+}
+
+@layer utilities {
+  .huaiqs-blue {
+    color: var(--huaiqs-blue);
+  }
+  
+  .bg-huaiqs-blue {
+    background-color: var(--huaiqs-blue);
+  }
+  
+  .huaiqs-purple {
+    color: var(--huaiqs-purple);
+  }
+  
+  .bg-huaiqs-purple {
+    background-color: var(--huaiqs-purple);
+  }
+  
+  .huaiqs-cyan {
+    color: var(--huaiqs-cyan);
+  }
+  
+  .bg-huaiqs-cyan {
+    background-color: var(--huaiqs-cyan);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 1s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
 
