@@ -51,7 +51,7 @@ const About = () => {
             return (
               <div 
                 key={index} 
-                className="text-center animate-fade-in group bg-huaiqs-gray/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-huaiqs-gray/50 transition-all duration-300"
+                className="text-center animate-fade-in group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/15 hover:border-white/30 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-center mb-4">
@@ -72,7 +72,7 @@ const About = () => {
 
         {/* Mission & Vision */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gradient-to-br from-huaiqs-blue/10 to-huaiqs-blue/5 backdrop-blur-sm border border-huaiqs-blue/20 rounded-2xl p-8 hover:border-huaiqs-blue/40 transition-all duration-300">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-huaiqs-blue/20 rounded-full">
                 <Target className="h-6 w-6 text-huaiqs-blue" />
@@ -86,7 +86,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-huaiqs-purple/10 to-huaiqs-purple/5 backdrop-blur-sm border border-huaiqs-purple/20 rounded-2xl p-8 hover:border-huaiqs-purple/40 transition-all duration-300">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-huaiqs-purple/20 rounded-full">
                 <Award className="h-6 w-6 text-huaiqs-purple" />
@@ -102,12 +102,12 @@ const About = () => {
         </div>
 
         {/* Values */}
-        <div className="bg-gradient-to-r from-huaiqs-gray/30 to-huaiqs-dark/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
           <h3 className="text-3xl font-bold text-center text-white mb-12">
             Nuestros <span className="gradient-text">Valores</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center group bg-huaiqs-gray/20 backdrop-blur-sm border border-white/5 rounded-xl p-6 hover:bg-huaiqs-gray/30 transition-all duration-300">
+            <div className="text-center group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Award className="h-8 w-8 text-white" />
               </div>
@@ -116,7 +116,7 @@ const About = () => {
                 Buscamos la perfección en cada proyecto, entregando soluciones que superen expectativas.
               </p>
             </div>
-            <div className="text-center group bg-huaiqs-gray/20 backdrop-blur-sm border border-white/5 rounded-xl p-6 hover:bg-huaiqs-gray/30 transition-all duration-300">
+            <div className="text-center group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-huaiqs-purple to-huaiqs-cyan rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="h-8 w-8 text-white" />
               </div>
@@ -125,7 +125,7 @@ const About = () => {
                 Trabajamos como socios estratégicos, construyendo relaciones duraderas basadas en la confianza.
               </p>
             </div>
-            <div className="text-center group bg-huaiqs-gray/20 backdrop-blur-sm border border-white/5 rounded-xl p-6 hover:bg-huaiqs-gray/30 transition-all duration-300">
+            <div className="text-center group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-huaiqs-cyan to-huaiqs-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>

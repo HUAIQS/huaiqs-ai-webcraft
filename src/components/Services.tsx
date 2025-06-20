@@ -93,7 +93,7 @@ const Services = () => {
                   </CardDescription>
                   <Button
                     onClick={scrollToContact}
-                    className="w-full bg-huaiqs-blue hover:bg-huaiqs-blue/90 text-white border-0 transition-all duration-300 group-hover:shadow-lg"
+                    className="w-full bg-white text-huaiqs-dark hover:bg-gray-100 border-2 border-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Más Información
                   </Button>
@@ -123,7 +123,7 @@ const Services = () => {
               <Button
                 onClick={() => window.open('https://calendly.com/huaiqs', '_blank')}
                 size="lg"
-                className="bg-huaiqs-gray hover:bg-huaiqs-light-gray text-white border-0 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
+                className="bg-white text-huaiqs-dark hover:bg-gray-100 border-2 border-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Agendar Llamada
               </Button>

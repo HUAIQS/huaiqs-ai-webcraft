@@ -98,6 +98,15 @@
   .section-darker {
     @apply bg-huaiqs-darker;
   }
+
+  /* Improved white button styles */
+  .btn-white {
+    @apply bg-white text-huaiqs-dark border-2 border-white font-semibold shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-300;
+  }
+
+  .btn-outline-white {
+    @apply bg-transparent text-white border-2 border-white font-semibold hover:bg-white hover:text-huaiqs-dark transition-all duration-300;
+  }
 }
 
 @layer utilities {
