@@ -1,4 +1,3 @@
-
 import { Bot, BarChart3, Target, MessageSquareDot, Cog, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -15,7 +14,7 @@ const Services = () => {
     {
       icon: BarChart3,
       title: "Análisis de Datos",
-      description: "Convertimos datos en insights accionables con análisis predictivo para decisiones inteligentes.",
+      description: "Transformamos tus datos en información valiosa que impulsa el crecimiento de tu negocio.",
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-huaiqs-purple/10 border-huaiqs-purple/30"
     },
@@ -36,7 +35,7 @@ const Services = () => {
     {
       icon: Cog,
       title: "Integración de Sistemas",
-      description: "Conectamos todos tus sistemas para un flujo de trabajo seamless y sin interrupciones.",
+      description: "Conectamos todos tus sistemas y podemos implementar sistemas RAG para un flujo de trabajo inteligente.",
       color: "from-indigo-500 to-blue-500",
       bgColor: "bg-indigo-500/10 border-indigo-500/30"
     },
