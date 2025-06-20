@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -56,12 +56,24 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            ¿Listo para <span className="gradient-text">Transformar</span> tu Negocio?
+            Inicia el <span className="gradient-text">Proceso de Selección</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Agenda una consulta gratuita y descubre cómo podemos ayudarte a automatizar 
-            procesos y maximizar tus resultados con inteligencia artificial.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+            Para trabajar juntos, primero debes contactar con nuestro equipo. Evaluaremos tu proyecto 
+            y si es seleccionado, programaremos una llamada para iniciar la colaboración.
           </p>
+          
+          {/* Process Info */}
+          <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-xl p-6 max-w-2xl mx-auto mb-8">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <AlertCircle className="h-6 w-6 text-amber-400" />
+              <h3 className="text-lg font-semibold text-amber-400">Importante</h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              No programamos llamadas directamente. Primero necesitamos evaluar tu proyecto 
+              para asegurar que podemos ofrecerte la mejor solución de IA para tu negocio.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -92,19 +104,24 @@ const Contact = () => {
               );
             })}
 
-            {/* CTA Card */}
+            {/* Process Steps Card */}
             <Card className="border-0 bg-gradient-to-r from-huaiqs-blue/20 to-huaiqs-purple/20 backdrop-blur-sm border border-huaiqs-blue/30 text-white">
-              <CardContent className="p-6 text-center">
-                <h4 className="text-xl font-bold mb-3">Consulta Gratuita</h4>
-                <p className="mb-4 text-gray-300">
-                  30 minutos de análisis gratuito de tu negocio
-                </p>
-                <Button 
-                  className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan w-full text-white"
-                  onClick={() => window.open('https://calendly.com/huaiqs', '_blank')}
-                >
-                  Agendar Llamada
-                </Button>
+              <CardContent className="p-6">
+                <h4 className="text-lg font-bold mb-4 text-center">Nuestro Proceso</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center space-x-3">
+                    <span className="bg-huaiqs-blue text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+                    <span className="text-gray-300">Envías tu solicitud</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="bg-huaiqs-purple text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+                    <span className="text-gray-300">Evaluamos tu proyecto</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <span className="bg-huaiqs-cyan text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+                    <span className="text-gray-300">Programamos llamada</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -114,15 +131,23 @@ const Contact = () => {
             <Card className="dark-card border-0 shadow-2xl">
               <CardHeader>
                 <CardTitle className="text-2xl text-center text-white">
-                  Envíanos un Mensaje
+                  Solicita Evaluación de tu Proyecto
                 </CardTitle>
+                <p className="text-center text-gray-400 text-sm">
+                  Comparte los detalles de tu proyecto para comenzar el proceso de selección
+                </p>
               </CardHeader>
               <CardContent>
                 {isSubmitted ? (
                   <div className="text-center py-8">
                     <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white mb-2">¡Mensaje Enviado!</h3>
-                    <p className="text-gray-300">Te contactaremos pronto para discutir tu proyecto.</p>
+                    <h3 className="text-2xl font-bold text-white mb-2">¡Solicitud Enviada!</h3>
+                    <p className="text-gray-300 mb-4">
+                      Hemos recibido tu solicitud. Nuestro equipo la evaluará y te contactaremos pronto.
+                    </p>
+                    <p className="text-sm text-amber-400">
+                      Tiempo de respuesta estimado: 24-48 horas
+                    </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -160,12 +185,13 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                        Empresa
+                        Empresa *
                       </label>
                       <input
                         type="text"
                         id="company"
                         name="company"
+                        required
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-huaiqs-gray border border-huaiqs-light-gray rounded-lg focus:ring-2 focus:ring-huaiqs-blue focus:border-transparent transition-colors text-white placeholder-gray-400"
@@ -174,7 +200,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                        Mensaje *
+                        Describe tu Proyecto *
                       </label>
                       <textarea
                         id="message"
@@ -184,7 +210,7 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-huaiqs-gray border border-huaiqs-light-gray rounded-lg focus:ring-2 focus:ring-huaiqs-blue focus:border-transparent transition-colors resize-vertical text-white placeholder-gray-400"
-                        placeholder="Cuéntanos sobre tu proyecto y cómo podemos ayudarte..."
+                        placeholder="Explica detalladamente tu proyecto, objetivos, presupuesto estimado y cómo crees que la IA puede ayudar a tu negocio..."
                       />
                     </div>
                     <Button
@@ -192,7 +218,7 @@ const Contact = () => {
                       size="lg"
                       className="w-full bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white font-semibold py-4"
                     >
-                      Enviar Mensaje
+                      Enviar Solicitud para Evaluación
                       <Send className="ml-2 h-5 w-5" />
                     </Button>
                   </form>

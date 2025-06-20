@@ -1,3 +1,4 @@
+
 import { Bot, BarChart3, Target, MessageSquareDot, Cog, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -92,9 +93,9 @@ const Services = () => {
                   </CardDescription>
                   <Button
                     onClick={scrollToContact}
-                    className="w-full bg-white text-huaiqs-dark hover:bg-gray-100 border-2 border-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-huaiqs-dark text-white border-2 border-huaiqs-blue hover:bg-huaiqs-blue hover:text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    Más Información
+                    Contactar Equipo
                   </Button>
                 </CardContent>
               </Card>
@@ -106,25 +107,34 @@ const Services = () => {
         <div className="text-center">
           <div className="bg-gradient-to-r from-huaiqs-blue/20 to-huaiqs-purple/20 backdrop-blur-sm border border-huaiqs-blue/30 rounded-2xl p-8 md:p-12 text-white animate-fade-in">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿Listo para Revolucionar tu Negocio?
+              ¿Listo para Transformar tu Negocio?
             </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Agenda una consulta gratuita y descubre cómo la IA puede transformar tu empresa
-            </p>
+            <div className="bg-huaiqs-gray/50 border border-huaiqs-blue/30 rounded-xl p-6 mb-8 max-w-4xl mx-auto">
+              <h4 className="text-xl font-semibold mb-4 text-huaiqs-blue">
+                Proceso de Selección para Trabajar Juntos
+              </h4>
+              <div className="text-left text-gray-300 space-y-3">
+                <div className="flex items-start space-x-3">
+                  <span className="bg-huaiqs-blue text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</span>
+                  <p><strong className="text-white">Contacta con nuestro equipo:</strong> Envíanos tu solicitud con detalles de tu proyecto.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="bg-huaiqs-purple text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">2</span>
+                  <p><strong className="text-white">Evaluación del proyecto:</strong> Nuestro equipo revisa tu solicitud y evalúa la viabilidad.</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="bg-huaiqs-cyan text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">3</span>
+                  <p><strong className="text-white">Aprobación y planificación:</strong> Si tu proyecto es seleccionado, programamos una llamada para iniciar la colaboración.</p>
+                </div>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={scrollToContact}
                 size="lg"
                 className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               >
-                Consulta Gratuita
-              </Button>
-              <Button
-                onClick={() => window.open('https://calendly.com/huaiqs', '_blank')}
-                size="lg"
-                className="bg-white text-huaiqs-dark hover:bg-gray-100 border-2 border-white font-semibold px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Agendar Llamada
+                Iniciar Proceso de Selección
               </Button>
             </div>
           </div>
