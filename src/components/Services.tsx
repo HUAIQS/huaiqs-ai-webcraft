@@ -8,48 +8,42 @@ const Services = () => {
     {
       icon: Bot,
       title: "Automatización con IA",
-      description: "Automatizamos tareas repetitivas y procesos complejos usando inteligencia artificial avanzada para que tu equipo se enfoque en lo estratégico.",
-      features: ["Automatización de workflows", "Procesamiento inteligente de documentos", "Gestión automatizada de emails y comunicaciones"],
+      description: "Automatizamos procesos complejos con IA avanzada para que tu equipo se enfoque en lo estratégico.",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-huaiqs-blue/10 border-huaiqs-blue/30"
     },
     {
       icon: BarChart3,
-      title: "Análisis de Datos Inteligente",
-      description: "Convertimos tus datos en insights accionables con análisis predictivo y machine learning para decisiones más inteligentes.",
-      features: ["Análisis predictivo avanzado", "Dashboards inteligentes en tiempo real", "Reportes automatizados personalizados"],
+      title: "Análisis de Datos",
+      description: "Convertimos datos en insights accionables con análisis predictivo para decisiones inteligentes.",
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-huaiqs-purple/10 border-huaiqs-purple/30"
     },
     {
       icon: Target,
       title: "Optimización de Campañas",
-      description: "Maximizamos el ROI de tus campañas de marketing con IA y análisis en tiempo real para resultados superiores.",
-      features: ["Segmentación inteligente de audiencias", "A/B testing automatizado", "Optimización dinámica de presupuesto"],
+      description: "Maximizamos el ROI de tus campañas con IA y análisis en tiempo real.",
       color: "from-green-500 to-emerald-500",
       bgColor: "bg-green-500/10 border-green-500/30"
     },
     {
       icon: MessageSquareDot,
       title: "Chatbots Inteligentes",
-      description: "Chatbots personalizados que mejoran la atención al cliente 24/7 y generan más leads calificados.",
-      features: ["Atención al cliente 24/7 automatizada", "Integración multicanal completa", "Aprendizaje continuo y mejora automática"],
+      description: "Atención al cliente 24/7 que mejora la experiencia y genera leads calificados.",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-500/10 border-orange-500/30"
     },
     {
       icon: Cog,
       title: "Integración de Sistemas",
-      description: "Conectamos y optimizamos todos tus sistemas para un flujo de trabajo seamless y sin interrupciones.",
-      features: ["APIs personalizadas y robustas", "Sincronización de datos en tiempo real", "Automatización completa de procesos"],
+      description: "Conectamos todos tus sistemas para un flujo de trabajo seamless y sin interrupciones.",
       color: "from-indigo-500 to-blue-500",
       bgColor: "bg-indigo-500/10 border-indigo-500/30"
     },
     {
       icon: TrendingUp,
       title: "Consultoría Estratégica",
-      description: "Te guiamos en la transformación digital de tu empresa con estrategias personalizadas y probadas.",
-      features: ["Auditoría completa de procesos", "Roadmap detallado de implementación", "Training especializado del equipo"],
+      description: "Te guiamos en la transformación digital con estrategias personalizadas y probadas.",
       color: "from-teal-500 to-cyan-500",
       bgColor: "bg-huaiqs-cyan/10 border-huaiqs-cyan/30"
     }
@@ -70,9 +64,8 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Nuestros <span className="gradient-text">Servicios</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Ofrecemos soluciones completas de inteligencia artificial y automatización 
-            diseñadas para transformar tu negocio y maximizar tus resultados de manera escalable.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Soluciones completas de IA diseñadas para transformar tu negocio y maximizar resultados.
           </p>
         </div>
 
@@ -98,20 +91,11 @@ const Services = () => {
                   <CardDescription className="text-gray-300 mb-6 leading-relaxed">
                     {service.description}
                   </CardDescription>
-                  <ul className="space-y-3 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="text-sm text-gray-300 flex items-center justify-start">
-                        <div className="w-2 h-2 bg-huaiqs-blue rounded-full mr-3 flex-shrink-0"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
                   <Button
                     onClick={scrollToContact}
-                    variant="outline"
-                    className="w-full border-huaiqs-blue/50 text-huaiqs-blue hover:bg-huaiqs-blue hover:text-white transition-all duration-300 group-hover:shadow-lg"
+                    className="w-full bg-huaiqs-blue hover:bg-huaiqs-blue/90 text-white border-0 transition-all duration-300 group-hover:shadow-lg"
                   >
-                    Solicitar Información
+                    Más Información
                   </Button>
                 </CardContent>
               </Card>
@@ -126,21 +110,20 @@ const Services = () => {
               ¿Listo para Revolucionar tu Negocio?
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Agenda una consulta gratuita de 30 minutos y descubre cómo la IA puede transformar tu empresa de manera inmediata
+              Agenda una consulta gratuita y descubre cómo la IA puede transformar tu empresa
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               >
-                Consulta Gratuita Ahora
+                Consulta Gratuita
               </Button>
               <Button
                 onClick={() => window.open('https://calendly.com/huaiqs', '_blank')}
-                variant="outline"
                 size="lg"
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
+                className="bg-huaiqs-gray hover:bg-huaiqs-light-gray text-white border-0 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
               >
                 Agendar Llamada
               </Button>
