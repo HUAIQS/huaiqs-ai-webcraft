@@ -109,12 +109,20 @@
     background-color: var(--huaiqs-blue);
   }
   
+  .border-huaiqs-blue {
+    border-color: var(--huaiqs-blue);
+  }
+  
   .huaiqs-purple {
     color: var(--huaiqs-purple);
   }
   
   .bg-huaiqs-purple {
     background-color: var(--huaiqs-purple);
+  }
+  
+  .border-huaiqs-purple {
+    border-color: var(--huaiqs-purple);
   }
   
   .huaiqs-cyan {
@@ -124,21 +132,41 @@
   .bg-huaiqs-cyan {
     background-color: var(--huaiqs-cyan);
   }
+  
+  .border-huaiqs-cyan {
+    border-color: var(--huaiqs-cyan);
+  }
 
   .bg-huaiqs-dark {
     background-color: var(--huaiqs-dark);
+  }
+  
+  .border-huaiqs-dark {
+    border-color: var(--huaiqs-dark);
   }
 
   .bg-huaiqs-darker {
     background-color: var(--huaiqs-darker);
   }
+  
+  .border-huaiqs-darker {
+    border-color: var(--huaiqs-darker);
+  }
 
   .bg-huaiqs-gray {
     background-color: var(--huaiqs-gray);
   }
+  
+  .border-huaiqs-gray {
+    border-color: var(--huaiqs-gray);
+  }
 
   .bg-huaiqs-light-gray {
     background-color: var(--huaiqs-light-gray);
+  }
+  
+  .border-huaiqs-light-gray {
+    border-color: var(--huaiqs-light-gray);
   }
   
   .animate-fade-in {
