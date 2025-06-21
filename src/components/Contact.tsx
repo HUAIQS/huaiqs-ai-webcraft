@@ -33,19 +33,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      info: "hola@huaiqs.com",
-      link: "mailto:hola@huaiqs.com"
+      info: "hhuaiqs@gmail.com",
+      link: "mailto:hhuaiqs@gmail.com"
     },
     {
       icon: Phone,
       title: "Teléfono",
-      info: "+34 900 123 456",
-      link: "tel:+34900123456"
+      info: "634 78 28 58",
+      link: "tel:+34634782858"
     },
     {
       icon: MapPin,
       title: "Ubicación",
-      info: "Madrid, España",
+      info: "Barcelona, España",
       link: "#"
     }
   ];

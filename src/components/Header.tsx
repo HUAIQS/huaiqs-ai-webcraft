@@ -20,10 +20,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="relative p-2 bg-gradient-to-br from-slate-800 via-slate-900 to-black rounded-lg shadow-md">
+            <div className="relative p-2 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg shadow-md">
               <Zap className="h-6 w-6 text-white" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-slate-900 to-black bg-clip-text text-transparent tracking-tight">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
               HUAIQS
             </span>
           </div>
@@ -32,25 +32,25 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-slate-800 hover:text-blue-600 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('servicios')}
-              className="text-slate-800 hover:text-blue-600 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('nosotros')}
-              className="text-slate-800 hover:text-blue-600 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Nosotros
             </button>
             <button
               onClick={() => scrollToSection('contacto')}
-              className="text-slate-800 hover:text-blue-600 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-600 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Contacto
             </button>
@@ -70,7 +70,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-slate-800 hover:text-blue-600 transition-colors hover:bg-slate-100 rounded-lg"
+            className="md:hidden p-2 text-blue-700 hover:text-blue-900 transition-colors hover:bg-blue-50 rounded-lg"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -82,25 +82,25 @@ const Header = () => {
             <nav className="flex flex-col space-y-4 pt-4 px-4">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-left text-slate-800 hover:text-blue-600 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
               >
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('servicios')}
-                className="text-left text-slate-800 hover:text-blue-600 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
               >
                 Servicios
               </button>
               <button
                 onClick={() => scrollToSection('nosotros')}
-                className="text-left text-slate-800 hover:text-blue-600 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
               >
                 Nosotros
               </button>
               <button
                 onClick={() => scrollToSection('contacto')}
-                className="text-left text-slate-800 hover:text-blue-600 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
               >
                 Contacto
               </button>
