@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, Cpu, ArrowRight } from 'lucide-react';
+import { Menu, X, Zap, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -20,11 +20,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="relative p-2.5 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 rounded-xl shadow-lg">
-              <Cpu className="h-7 w-7 text-white" />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl"></div>
+            <div className="relative p-2 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 rounded-lg shadow-md">
+              <Zap className="h-6 w-6 text-white" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-slate-900 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-800 bg-clip-text text-transparent tracking-tight">
               HUAIQS
             </span>
           </div>
@@ -33,25 +32,25 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-slate-700 hover:text-slate-900 transition-colors font-medium hover:scale-105 transform duration-200"
+              className="text-slate-600 hover:text-slate-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-slate-900 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('servicios')}
-              className="text-slate-700 hover:text-slate-900 transition-colors font-medium hover:scale-105 transform duration-200"
+              className="text-slate-600 hover:text-slate-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-slate-900 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('nosotros')}
-              className="text-slate-700 hover:text-slate-900 transition-colors font-medium hover:scale-105 transform duration-200"
+              className="text-slate-600 hover:text-slate-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-slate-900 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Nosotros
             </button>
             <button
               onClick={() => scrollToSection('contacto')}
-              className="text-slate-700 hover:text-slate-900 transition-colors font-medium hover:scale-105 transform duration-200"
+              className="text-slate-600 hover:text-slate-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-slate-900 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Contacto
             </button>
@@ -61,9 +60,9 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('contacto')}
-              className="bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+              className="bg-gradient-to-r from-slate-800 to-slate-700 hover:from-slate-700 hover:to-slate-600 text-white px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold"
             >
-              Consulta Gratis
+              Consulta Gratuita
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
@@ -71,7 +70,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-slate-700 hover:text-slate-900 transition-colors hover:bg-slate-100 rounded-lg"
+            className="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors hover:bg-slate-100 rounded-lg"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -83,33 +82,33 @@ const Header = () => {
             <nav className="flex flex-col space-y-4 pt-4 px-4">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-left text-slate-700 hover:text-slate-900 transition-colors font-medium py-2 hover:bg-slate-50 rounded-lg px-3"
+                className="text-left text-slate-600 hover:text-slate-900 transition-colors font-semibold py-2 hover:bg-slate-50 rounded-lg px-3"
               >
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('servicios')}
-                className="text-left text-slate-700 hover:text-slate-900 transition-colors font-medium py-2 hover:bg-slate-50 rounded-lg px-3"
+                className="text-left text-slate-600 hover:text-slate-900 transition-colors font-semibold py-2 hover:bg-slate-50 rounded-lg px-3"
               >
                 Servicios
               </button>
               <button
                 onClick={() => scrollToSection('nosotros')}
-                className="text-left text-slate-700 hover:text-slate-900 transition-colors font-medium py-2 hover:bg-slate-50 rounded-lg px-3"
+                className="text-left text-slate-600 hover:text-slate-900 transition-colors font-semibold py-2 hover:bg-slate-50 rounded-lg px-3"
               >
                 Nosotros
               </button>
               <button
                 onClick={() => scrollToSection('contacto')}
-                className="text-left text-slate-700 hover:text-slate-900 transition-colors font-medium py-2 hover:bg-slate-50 rounded-lg px-3"
+                className="text-left text-slate-600 hover:text-slate-900 transition-colors font-semibold py-2 hover:bg-slate-50 rounded-lg px-3"
               >
                 Contacto
               </button>
               <Button
                 onClick={() => scrollToSection('contacto')}
-                className="bg-gradient-to-r from-slate-800 to-slate-700 text-white mt-4 w-full rounded-lg font-medium"
+                className="bg-gradient-to-r from-slate-800 to-slate-700 text-white mt-4 w-full rounded-lg font-semibold"
               >
-                Consulta Gratis
+                Consulta Gratuita
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </nav>
