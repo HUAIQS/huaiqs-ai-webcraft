@@ -1,5 +1,5 @@
 
-import { ArrowRight, Bot, TrendingUp, Zap, Play, CheckCircle } from 'lucide-react';
+import { ArrowRight, Bot, TrendingUp, Zap, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -67,8 +67,8 @@ const Hero = () => {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              {/* CTA Button - Solo uno */}
+              <div className="mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <Button
                   onClick={() => scrollToSection('contacto')}
                   size="lg"
@@ -76,15 +76,6 @@ const Hero = () => {
                 >
                   Consulta Gratuita
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
-                  onClick={() => scrollToSection('portfolio')}
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
-                >
-                  <Play className="mr-2 h-5 w-5" />
-                  Ver Casos de Éxito
                 </Button>
               </div>
             </div>
