@@ -69,74 +69,77 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid - Professional & Minimalist */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <Card 
                 key={index} 
-                className={`group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 dark-card ${service.bgColor} backdrop-blur-sm`}
+                className="group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 bg-white/5 backdrop-blur-sm border border-white/10"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="text-center pb-4">
                   <div className="inline-flex p-4 rounded-full bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-white group-hover:text-huaiqs-blue transition-colors">
+                  <CardTitle className="text-xl font-semibold text-white group-hover:text-huaiqs-blue transition-colors">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardDescription className="text-gray-300 mb-6 leading-relaxed">
+                  <CardDescription className="text-gray-300 leading-relaxed">
                     {service.description}
                   </CardDescription>
-                  <Button
-                    onClick={scrollToContact}
-                    className="w-full bg-huaiqs-dark text-white border-2 border-huaiqs-blue hover:bg-huaiqs-blue hover:text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Contactar Equipo
-                  </Button>
                 </CardContent>
               </Card>
             );
           })}
         </div>
 
-        {/* CTA Section */}
+        {/* Single CTA Section - Professional & Minimalist */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-huaiqs-blue/20 to-huaiqs-purple/20 backdrop-blur-sm border border-huaiqs-blue/30 rounded-2xl p-8 md:p-12 text-white animate-fade-in">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12 text-white animate-fade-in max-w-4xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
               ¿Listo para Transformar tu Negocio?
             </h3>
-            <div className="bg-huaiqs-gray/50 border border-huaiqs-blue/30 rounded-xl p-6 mb-8 max-w-4xl mx-auto">
-              <h4 className="text-xl font-semibold mb-4 text-huaiqs-blue">
-                Proceso de Selección para Trabajar Juntos
+            
+            <div className="bg-white/5 border border-white/10 rounded-xl p-6 mb-8">
+              <h4 className="text-xl font-semibold mb-6 text-huaiqs-blue">
+                Proceso de Selección
               </h4>
-              <div className="text-left text-gray-300 space-y-3">
-                <div className="flex items-start space-x-3">
-                  <span className="bg-huaiqs-blue text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</span>
-                  <p><strong className="text-white">Contacta con nuestro equipo:</strong> Envíanos tu solicitud con detalles de tu proyecto.</p>
+              <div className="grid md:grid-cols-3 gap-6 text-left">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-huaiqs-blue rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-semibold">1</span>
+                  </div>
+                  <h5 className="text-white font-medium mb-2">Solicitud</h5>
+                  <p className="text-gray-400 text-sm">Envíanos tu proyecto con detalles específicos</p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <span className="bg-huaiqs-purple text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">2</span>
-                  <p><strong className="text-white">Evaluación del proyecto:</strong> Nuestro equipo revisa tu solicitud y evalúa la viabilidad.</p>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-huaiqs-purple rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-semibold">2</span>
+                  </div>
+                  <h5 className="text-white font-medium mb-2">Evaluación</h5>
+                  <p className="text-gray-400 text-sm">Revisamos viabilidad y compatibilidad</p>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <span className="bg-huaiqs-cyan text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">3</span>
-                  <p><strong className="text-white">Aprobación y planificación:</strong> Si tu proyecto es seleccionado, programamos una llamada para iniciar la colaboración.</p>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-huaiqs-cyan rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-semibold">3</span>
+                  </div>
+                  <h5 className="text-white font-medium mb-2">Colaboración</h5>
+                  <p className="text-gray-400 text-sm">Iniciamos el trabajo conjunto</p>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={scrollToContact}
-                size="lg"
-                className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
-              >
-                Iniciar Proceso de Selección
-              </Button>
-            </div>
+            
+            <Button
+              onClick={scrollToContact}
+              size="lg"
+              className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+            >
+              Contactar Equipo
+            </Button>
           </div>
         </div>
       </div>

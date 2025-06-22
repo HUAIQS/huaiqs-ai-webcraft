@@ -104,26 +104,39 @@ const Contact = () => {
               );
             })}
 
-            {/* Process Steps Card */}
-            <Card className="border-0 bg-gradient-to-r from-huaiqs-blue/20 to-huaiqs-purple/20 backdrop-blur-sm border border-huaiqs-blue/30 text-white">
-              <CardContent className="p-6">
-                <h4 className="text-lg font-bold mb-4 text-center">Nuestro Proceso</h4>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center space-x-3">
-                    <span className="bg-huaiqs-blue text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
-                    <span className="text-gray-300">Envías tu solicitud</span>
+            {/* Process Steps Card - Professional & Minimalist */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h4 className="text-lg font-semibold text-white mb-6 text-center">Nuestro Proceso</h4>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-huaiqs-blue rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm font-medium">1</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="bg-huaiqs-purple text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
-                    <span className="text-gray-300">Evaluamos tu proyecto</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <span className="bg-huaiqs-cyan text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
-                    <span className="text-gray-300">Programamos llamada</span>
+                  <div>
+                    <h5 className="text-white font-medium mb-1">Solicitud</h5>
+                    <p className="text-gray-400 text-sm">Envías tu proyecto para evaluación</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-huaiqs-purple rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm font-medium">2</span>
+                  </div>
+                  <div>
+                    <h5 className="text-white font-medium mb-1">Evaluación</h5>
+                    <p className="text-gray-400 text-sm">Revisamos viabilidad y compatibilidad</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-huaiqs-cyan rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm font-medium">3</span>
+                  </div>
+                  <div>
+                    <h5 className="text-white font-medium mb-1">Colaboración</h5>
+                    <p className="text-gray-400 text-sm">Iniciamos el trabajo conjunto</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
