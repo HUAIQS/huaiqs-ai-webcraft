@@ -1,8 +1,10 @@
+
 import { useState } from 'react';
 import { supabase } from '@/supabaseClient';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, ExternalLink, Copy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,24 +48,39 @@ const Contact = () => {
     });
   };
 
+  const copyToClipboard = (text: string, type: string) => {
+    navigator.clipboard.writeText(text);
+    toast({
+      title: "Copiado",
+      description: `${type} copiado al portapapeles`,
+      duration: 2000,
+    });
+  };
+
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
       info: "hhuaiqs@gmail.com",
-      link: "mailto:hhuaiqs@gmail.com"
+      link: "mailto:hhuaiqs@gmail.com",
+      description: "Respuesta en 24-48 horas",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Phone,
       title: "Teléfono",
       info: "634 78 28 58",
-      link: "tel:+34634782858"
+      link: "tel:+34634782858",
+      description: "Lunes a Viernes 9:00-18:00",
+      color: "from-green-500 to-emerald-500"
     },
     {
       icon: MapPin,
       title: "Ubicación",
       info: "Barcelona, España",
-      link: "#"
+      link: "#",
+      description: "Zona horaria CET/CEST",
+      color: "from-purple-500 to-pink-500"
     }
   ];
 
@@ -93,26 +111,56 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info */}
+          {/* Contact Info - Enhanced Visual Design */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-white mb-6">Contáctanos</h3>
             {contactInfo.map((item, index) => {
               const IconComponent = item.icon;
               return (
-                <Card key={index} className="dark-card border-huaiqs-blue/30 hover:border-huaiqs-blue/50 hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple rounded-lg">
-                        <IconComponent className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-white">{item.title}</h4>
-                        <a 
-                          href={item.link}
-                          className="text-gray-300 hover:text-huaiqs-blue transition-colors"
-                        >
-                          {item.info}
-                        </a>
+                <Card key={index} className="dark-card border-0 overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      {/* Gradient Background */}
+                      <div className={`absolute inset-0 bg-gradient-to-r ${item.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                      
+                      {/* Content */}
+                      <div className="relative p-6">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="flex items-center space-x-4">
+                            <div className={`p-4 bg-gradient-to-r ${item.color} rounded-xl shadow-lg`}>
+                              <IconComponent className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-bold text-white text-lg">{item.title}</h4>
+                              <p className="text-gray-400 text-sm">{item.description}</p>
+                            </div>
+                          </div>
+                          
+                          {/* Copy Button */}
+                          {item.title !== "Ubicación" && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => copyToClipboard(item.info, item.title)}
+                              className="text-gray-400 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
+                            >
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          )}
+                        </div>
+                        
+                        {/* Contact Link */}
+                        <div className="ml-16">
+                          <a 
+                            href={item.link}
+                            className="text-white font-medium text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-huaiqs-blue hover:to-huaiqs-purple transition-all duration-300 flex items-center group/link"
+                          >
+                            {item.info}
+                            {item.title !== "Ubicación" && (
+                              <ExternalLink className="ml-2 h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                            )}
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -121,24 +169,24 @@ const Contact = () => {
             })}
 
             {/* Proceso visual */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-6 mt-8">
               <h4 className="text-lg font-semibold text-white mb-6 text-center">Nuestro Proceso</h4>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {["Solicitud", "Evaluación", "Colaboración"].map((etapa, i) => {
-                  const colores = ["huaiqs-blue", "huaiqs-purple", "huaiqs-cyan"];
+                  const colores = ["from-huaiqs-blue to-blue-600", "from-huaiqs-purple to-purple-600", "from-huaiqs-cyan to-cyan-600"];
                   const descripciones = [
                     "Envías tu proyecto para evaluación",
                     "Revisamos viabilidad y compatibilidad",
                     "Iniciamos el trabajo conjunto"
                   ];
                   return (
-                    <div key={i} className="flex items-start space-x-4">
-                      <div className={`w-8 h-8 bg-${colores[i]} rounded-full flex items-center justify-center flex-shrink-0 mt-0.5`}>
-                        <span className="text-white text-sm font-medium">{i + 1}</span>
+                    <div key={i} className="flex items-start space-x-4 group">
+                      <div className={`w-10 h-10 bg-gradient-to-r ${colores[i]} rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <span className="text-white text-sm font-bold">{i + 1}</span>
                       </div>
-                      <div>
-                        <h5 className="text-white font-medium mb-1">{etapa}</h5>
-                        <p className="text-gray-400 text-sm">{descripciones[i]}</p>
+                      <div className="flex-1">
+                        <h5 className="text-white font-semibold mb-2 text-lg">{etapa}</h5>
+                        <p className="text-gray-300 text-sm leading-relaxed">{descripciones[i]}</p>
                       </div>
                     </div>
                   );
@@ -254,4 +302,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

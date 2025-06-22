@@ -2,10 +2,14 @@
 import { ExternalLink, TrendingUp, Users, Clock, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Portfolio = () => {
+  const navigate = useNavigate();
+
   const projects = [
     {
+      id: 'ecommerce-plus',
       title: "E-commerce Plus",
       category: "Automatización de Procesos",
       description: "Implementamos un sistema de IA que automatizó el 90% de los procesos de atención al cliente, reduciendo tiempos de respuesta de 24 horas a 2 minutos.",
@@ -18,6 +22,7 @@ const Portfolio = () => {
       tags: ["Chatbots", "Automatización", "E-commerce"]
     },
     {
+      id: 'techcorp-solutions',
       title: "TechCorp Solutions",
       category: "Análisis Predictivo",
       description: "Desarrollamos un sistema de análisis predictivo que optimizó la cadena de suministro, reduciendo costos operativos en un 40%.",
@@ -30,6 +35,7 @@ const Portfolio = () => {
       tags: ["Machine Learning", "Análisis", "Optimización"]
     },
     {
+      id: 'marketing-agency-pro',
       title: "Marketing Agency Pro",
       category: "Optimización de Campañas",
       description: "Creamos un algoritmo de IA que optimiza automáticamente las campañas publicitarias en tiempo real, mejorando el ROAS en un 280%.",
@@ -42,6 +48,10 @@ const Portfolio = () => {
       tags: ["Marketing", "IA", "Optimización"]
     }
   ];
+
+  const handleViewCase = (projectId: string) => {
+    navigate(`/caso-exito/${projectId}`);
+  };
 
   return (
     <section className="py-20 section-dark">
@@ -111,6 +121,7 @@ const Portfolio = () => {
                 </div>
 
                 <Button 
+                  onClick={() => handleViewCase(project.id)}
                   variant="outline" 
                   className="w-full border-huaiqs-blue text-huaiqs-blue hover:bg-huaiqs-blue hover:text-white"
                 >
@@ -129,7 +140,7 @@ const Portfolio = () => {
               ¿Quieres Ser Nuestro Próximo Caso de Éxito?
             </h3>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Agenda una consulta gratuita y descubre cómo podemos transformar tu negocio con IA
+              Solicita una evaluación gratuita de tu proyecto y descubre cómo podemos transformar tu negocio con IA
             </p>
             <Button
               onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
