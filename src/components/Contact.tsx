@@ -223,7 +223,7 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-huaiqs-gray border border-huaiqs-light-gray rounded-lg focus:ring-2 focus:ring-huaiqs-blue focus:border-transparent transition-colors resize-vertical text-white placeholder-gray-400"
-                        placeholder="Explica detalladamente tu proyecto, objetivos, presupuesto estimado y cómo crees que la IA puede ayudar a tu negocio..."
+                        placeholder="Explica detalladamente tu proyecto, objetivos y presupuesto estimado."
                       />
                     </div>
                     <Button

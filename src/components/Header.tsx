@@ -49,6 +49,12 @@ const Header = () => {
               Nosotros
             </button>
             <button
+              onClick={() => scrollToSection('recursos')}
+              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+            >
+              Blog
+            </button>
+            <button
               onClick={() => scrollToSection('contacto')}
               className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
@@ -97,6 +103,12 @@ const Header = () => {
                 className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
               >
                 Nosotros
+              </button>
+              <button
+                onClick={() => scrollToSection('recursos')}
+                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+              >
+                Blog
               </button>
               <button
                 onClick={() => scrollToSection('contacto')}

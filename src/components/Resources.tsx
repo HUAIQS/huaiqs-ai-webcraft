@@ -1,6 +1,6 @@
 
-import { BookOpen, Clock, ArrowRight, Users, TrendingUp } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Clock, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const Resources = () => {
@@ -37,54 +37,49 @@ const Resources = () => {
       readTime: "10 min",
       date: "8 Dic 2024",
       image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=250&fit=crop"
-    }
-  ];
-
-  const resources = [
-    {
-      icon: BookOpen,
-      title: "Guía Completa de IA",
-      description: "Todo lo que necesitas saber sobre inteligencia artificial aplicada a negocios.",
-      type: "E-book Gratuito"
     },
     {
-      icon: TrendingUp,
-      title: "Calculadora de ROI en IA",
-      description: "Estima el retorno de inversión de tu proyecto de inteligencia artificial.",
-      type: "Herramienta"
+      title: "GPT-4 y las Nuevas Capacidades de IA Generativa",
+      excerpt: "Análisis de las últimas innovaciones en modelos de lenguaje y su impacto en el mundo empresarial.",
+      category: "Innovación",
+      readTime: "7 min",
+      date: "5 Dic 2024",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop"
     },
     {
-      icon: Users,
-      title: "Webinar Exclusivo",
-      description: "Sesión en vivo sobre las últimas tendencias en automatización empresarial.",
-      type: "Evento Online"
+      title: "Machine Learning en la Toma de Decisiones Empresariales",
+      excerpt: "Cómo las empresas están utilizando ML para optimizar procesos y mejorar la precisión en decisiones críticas.",
+      category: "Aplicaciones",
+      readTime: "9 min",
+      date: "2 Dic 2024",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
     }
   ];
 
   return (
-    <section className="py-20 section-darker">
+    <section id="recursos" className="py-20 section-darker">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Recursos y <span className="gradient-text">Conocimiento</span>
+            Blog de <span className="gradient-text">Inteligencia Artificial</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Mantente actualizado con las últimas tendencias, guías prácticas y casos de estudio 
-            sobre inteligencia artificial y automatización empresarial.
+            Mantente actualizado con las últimas noticias, tendencias y avances 
+            en inteligencia artificial y su aplicación en el mundo empresarial.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {/* Featured Article */}
-          <div className="lg:col-span-2">
-            {articles.filter(article => article.featured).map((article, index) => (
-              <Card key={index} className="dark-card border-0 overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+        {/* Featured Article */}
+        <div className="mb-16">
+          {articles.filter(article => article.featured).map((article, index) => (
+            <Card key={index} className="dark-card border-0 overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img 
                     src={article.image} 
                     alt={article.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-64 lg:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-huaiqs-darker/80 to-transparent"></div>
                   <div className="absolute top-4 left-4">
@@ -93,62 +88,34 @@ const Resources = () => {
                     </span>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
-                    <span className="px-2 py-1 bg-huaiqs-gray rounded-full">{article.category}</span>
+                <CardContent className="p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                    <span className="px-3 py-1 bg-huaiqs-gray rounded-full">{article.category}</span>
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
                       {article.readTime}
                     </div>
                     <span>{article.date}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-huaiqs-blue transition-colors">
+                  <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-huaiqs-blue transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 leading-relaxed">
+                  <p className="text-gray-300 mb-6 leading-relaxed text-lg">
                     {article.excerpt}
                   </p>
-                  <Button variant="outline" className="border-huaiqs-blue text-huaiqs-blue hover:bg-huaiqs-blue hover:text-white">
+                  <Button variant="outline" className="border-huaiqs-blue text-huaiqs-blue hover:bg-huaiqs-blue hover:text-white w-fit">
                     Leer Artículo
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Resources Sidebar */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white mb-6">Recursos Gratuitos</h3>
-            {resources.map((resource, index) => {
-              const IconComponent = resource.icon;
-              return (
-                <Card key={index} className="dark-card border-0 hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                  <CardContent className="p-4">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple rounded-lg">
-                        <IconComponent className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="text-xs text-huaiqs-blue font-medium">{resource.type}</span>
-                        <h4 className="text-white font-semibold mb-1 group-hover:text-huaiqs-blue transition-colors">
-                          {resource.title}
-                        </h4>
-                        <p className="text-gray-400 text-sm">
-                          {resource.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+              </div>
+            </Card>
+          ))}
         </div>
 
         {/* Recent Articles */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-8">Artículos Recientes</h3>
+          <h3 className="text-2xl font-bold text-white mb-8">Noticias Recientes</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.filter(article => !article.featured).map((article, index) => (
               <Card key={index} className="dark-card border-0 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
