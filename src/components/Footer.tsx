@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               <div className="p-2 bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple rounded-lg">
-                <Brain className="h-6 w-6 text-white" />
+                <img src="/lovable-uploads/11aa6506-b8cc-4ec6-9a54-f2d3c0676810.png" alt="HUAIQS Logo" className="h-6 w-6" />
               </div>
               <span className="text-2xl font-bold gradient-text">HUAIQS</span>
             </div>
@@ -113,19 +113,19 @@ const Footer = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-huaiqs-blue" />
-                <a href="mailto:hola@huaiqs.com" className="text-gray-300 hover:text-white transition-colors">
-                  hola@huaiqs.com
+                <a href="mailto:hhuaiqs@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                  hhuaiqs@gmail.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-huaiqs-blue" />
-                <a href="tel:+34900123456" className="text-gray-300 hover:text-white transition-colors">
-                  +34 900 123 456
+                <a href="tel:+34634782858" className="text-gray-300 hover:text-white transition-colors">
+                  +34 634 78 28 58
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-huaiqs-blue" />
-                <span className="text-gray-300">Madrid, España</span>
+                <span className="text-gray-300">Barcelona, España</span>
               </div>
             </div>
             

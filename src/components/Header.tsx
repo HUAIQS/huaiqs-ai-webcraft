@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, Zap, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -21,9 +21,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="relative p-2 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg shadow-md">
-              <Zap className="h-6 w-6 text-white" />
+              <img src="/lovable-uploads/11aa6506-b8cc-4ec6-9a54-f2d3c0676810.png" alt="HUAIQS Logo" className="h-6 w-6" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
               HUAIQS
             </span>
           </div>
@@ -32,25 +32,25 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('servicios')}
-              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('nosotros')}
-              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Nosotros
             </button>
             <button
               onClick={() => scrollToSection('contacto')}
-              className="text-blue-700 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
             >
               Contacto
             </button>
