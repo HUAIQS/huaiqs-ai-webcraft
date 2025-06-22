@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { supabase } from '@/supabaseClient';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,10 +13,26 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log('Form submitted:', formData);
+
+    const { name, email, company, message } = formData;
+
+    const { error } = await supabase.from('contacto').insert([
+      {
+        nombre: name,
+        email: email,
+        empresa: company,
+        mensaje: message
+      }
+    ]);
+
+    if (error) {
+      console.error('Error al enviar a Supabase:', error);
+      alert("Hubo un problema al enviar tu solicitud. Intenta más tarde.");
+      return;
+    }
+
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
     setFormData({ name: '', email: '', company: '', message: '' });
@@ -62,8 +78,8 @@ const Contact = () => {
             Para trabajar juntos, primero debes contactar con nuestro equipo. Evaluaremos tu proyecto 
             y si es seleccionado, programaremos una llamada para iniciar la colaboración.
           </p>
-          
-          {/* Process Info */}
+
+          {/* Aviso */}
           <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-xl p-6 max-w-2xl mx-auto mb-8">
             <div className="flex items-center justify-center space-x-3 mb-4">
               <AlertCircle className="h-6 w-6 text-amber-400" />
@@ -104,37 +120,29 @@ const Contact = () => {
               );
             })}
 
-            {/* Process Steps Card - Professional & Minimalist */}
+            {/* Proceso visual */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <h4 className="text-lg font-semibold text-white mb-6 text-center">Nuestro Proceso</h4>
               <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-huaiqs-blue rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-sm font-medium">1</span>
-                  </div>
-                  <div>
-                    <h5 className="text-white font-medium mb-1">Solicitud</h5>
-                    <p className="text-gray-400 text-sm">Envías tu proyecto para evaluación</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-huaiqs-purple rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-sm font-medium">2</span>
-                  </div>
-                  <div>
-                    <h5 className="text-white font-medium mb-1">Evaluación</h5>
-                    <p className="text-gray-400 text-sm">Revisamos viabilidad y compatibilidad</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-huaiqs-cyan rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-sm font-medium">3</span>
-                  </div>
-                  <div>
-                    <h5 className="text-white font-medium mb-1">Colaboración</h5>
-                    <p className="text-gray-400 text-sm">Iniciamos el trabajo conjunto</p>
-                  </div>
-                </div>
+                {["Solicitud", "Evaluación", "Colaboración"].map((etapa, i) => {
+                  const colores = ["huaiqs-blue", "huaiqs-purple", "huaiqs-cyan"];
+                  const descripciones = [
+                    "Envías tu proyecto para evaluación",
+                    "Revisamos viabilidad y compatibilidad",
+                    "Iniciamos el trabajo conjunto"
+                  ];
+                  return (
+                    <div key={i} className="flex items-start space-x-4">
+                      <div className={`w-8 h-8 bg-${colores[i]} rounded-full flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                        <span className="text-white text-sm font-medium">{i + 1}</span>
+                      </div>
+                      <div>
+                        <h5 className="text-white font-medium mb-1">{etapa}</h5>
+                        <p className="text-gray-400 text-sm">{descripciones[i]}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -246,3 +254,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
