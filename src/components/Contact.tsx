@@ -284,14 +284,14 @@ const Contact = () => {
                         placeholder="Explica detalladamente tu proyecto, objetivos y presupuesto estimado."
                       />
                     </div>
-                    <Button
+                    <button
                       type="submit"
-                      size="lg"
-                      className="w-full bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white font-semibold py-4"
+                      className="w-full bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple hover:from-huaiqs-purple hover:to-huaiqs-cyan text-white font-semibold py-4 rounded-lg flex justify-center items-center"
                     >
                       Enviar Solicitud para Evaluación
                       <Send className="ml-2 h-5 w-5" />
-                    </Button>
+                    </button>
+
                   </form>
                 )}
               </CardContent>
