@@ -134,7 +134,7 @@ const Contact = () => {
                               <IconComponent className="h-6 w-6 text-white" />
                             </div>
                             <div>
-                              <h4 className="font-bold text-white text-lg">{item.title}</h4>
+                              <h4 className="font-bold text-gray-200 text-lg">{item.title}</h4>
                               <p className="text-gray-400 text-sm">{item.description}</p>
                             </div>
                           </div>
@@ -156,7 +156,7 @@ const Contact = () => {
                         <div className="ml-16">
                           <a 
                             href={item.link}
-                            className="text-white font-medium text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-huaiqs-blue hover:to-huaiqs-purple transition-all duration-300 flex items-center group/link"
+                            className="text-gray-300 font-medium text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-huaiqs-blue hover:to-huaiqs-purple transition-all duration-300 flex items-center group/link"
                           >
                             {item.info}
                             {item.title !== "Ubicación" && (
