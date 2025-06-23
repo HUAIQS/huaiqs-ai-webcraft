@@ -21,7 +21,7 @@ const Contact = () => {
 
     const { name, email, company, message } = formData;
 
-    const { error } = await supabase.from('contacto').insert([
+    const { error } = await supabase.from('contacto_web').insert([
       {
         nombre: name,
         email: email,
