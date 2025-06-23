@@ -31,10 +31,11 @@ const Contact = () => {
   ]);
 
   if (error) {
-    console.log('❌ Supabase insert error:', error);
+    console.error('❌ Supabase insert error:', JSON.stringify(error, null, 2));
     alert("Hubo un problema al enviar tu solicitud. Intenta más tarde.");
     return;
   }
+
 
   console.log('✅ Formulario enviado correctamente');
 
