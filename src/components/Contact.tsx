@@ -16,30 +16,32 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    const { name, email, company, message } = formData;
+  const { name, email, company, message } = formData;
 
-    const { error } = await supabase.from('contacto_web').insert([
-      {
-        nombre: name,
-        email: email,
-        empresa: company,
-        mensaje: message
-      }
-    ]);
-
-    if (error) {
-      console.error('Error al enviar a Supabase:', error);
-      alert("Hubo un problema al enviar tu solicitud. Intenta más tarde.");
-      return;
+  const { error } = await supabase.from('contacto_web').insert([
+    {
+      nombre: name,
+      email: email,
+      empresa: company,
+      mensaje: message
     }
+  ]);
 
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', company: '', message: '' });
-  };
+  if (error) {
+    console.log('❌ Supabase insert error:', error);
+    alert("Hubo un problema al enviar tu solicitud. Intenta más tarde.");
+    return;
+  }
+
+  console.log('✅ Formulario enviado correctamente');
+
+  setIsSubmitted(true);
+  setTimeout(() => setIsSubmitted(false), 3000);
+  setFormData({ name: '', email: '', company: '', message: '' });
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
