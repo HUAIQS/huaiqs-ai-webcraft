@@ -19,11 +19,11 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="relative p-2 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-lg shadow-md">
+          <div className="flex items-center space-x-4">
+            <div className="relative w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-sm">
               <img src="/lovable-uploads/11aa6506-b8cc-4ec6-9a54-f2d3c0676810.png" alt="HUAIQS Logo" className="h-6 w-6" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
+            <span className="text-3xl font-light tracking-wider text-gray-800 hover:text-blue-700 transition-colors duration-300">
               HUAIQS
             </span>
           </div>
@@ -32,31 +32,31 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-gray-700 hover:text-blue-700 transition-colors font-medium tracking-wide hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-700 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Inicio
             </button>
             <button
               onClick={() => scrollToSection('servicios')}
-              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-gray-700 hover:text-blue-700 transition-colors font-medium tracking-wide hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-700 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Servicios
             </button>
             <button
               onClick={() => scrollToSection('nosotros')}
-              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-gray-700 hover:text-blue-700 transition-colors font-medium tracking-wide hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-700 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Nosotros
             </button>
             <button
               onClick={() => scrollToSection('recursos')}
-              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-gray-700 hover:text-blue-700 transition-colors font-medium tracking-wide hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-700 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Blog
             </button>
             <button
               onClick={() => scrollToSection('contacto')}
-              className="text-blue-800 hover:text-blue-900 transition-colors font-semibold hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full drop-shadow-sm"
+              className="text-gray-700 hover:text-blue-700 transition-colors font-medium tracking-wide hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-700 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Contacto
             </button>
@@ -66,7 +66,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('contacto')}
-              className="bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold"
+              className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2.5 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium tracking-wide"
             >
               Consulta Gratuita
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -76,7 +76,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-blue-700 hover:text-blue-900 transition-colors hover:bg-blue-50 rounded-lg"
+            className="md:hidden p-2 text-gray-700 hover:text-blue-700 transition-colors hover:bg-gray-50 rounded-lg"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -88,37 +88,37 @@ const Header = () => {
             <nav className="flex flex-col space-y-4 pt-4 px-4">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-gray-700 hover:text-blue-700 transition-colors font-medium py-2 hover:bg-gray-50 rounded-lg px-3"
               >
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('servicios')}
-                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-gray-700 hover:text-blue-700 transition-colors font-medium py-2 hover:bg-gray-50 rounded-lg px-3"
               >
                 Servicios
               </button>
               <button
                 onClick={() => scrollToSection('nosotros')}
-                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-gray-700 hover:text-blue-700 transition-colors font-medium py-2 hover:bg-gray-50 rounded-lg px-3"
               >
                 Nosotros
               </button>
               <button
                 onClick={() => scrollToSection('recursos')}
-                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-gray-700 hover:text-blue-700 transition-colors font-medium py-2 hover:bg-gray-50 rounded-lg px-3"
               >
                 Blog
               </button>
               <button
                 onClick={() => scrollToSection('contacto')}
-                className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
+                className="text-left text-gray-700 hover:text-blue-700 transition-colors font-medium py-2 hover:bg-gray-50 rounded-lg px-3"
               >
                 Contacto
               </button>
               <Button
                 onClick={() => scrollToSection('contacto')}
-                className="bg-gradient-to-r from-blue-700 to-blue-800 text-white mt-4 w-full rounded-lg font-semibold"
+                className="bg-blue-700 hover:bg-blue-800 text-white mt-4 w-full rounded-lg font-medium"
               >
                 Consulta Gratuita
                 <ArrowRight className="ml-2 h-4 w-4" />
