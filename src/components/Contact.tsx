@@ -18,7 +18,7 @@ const Contact = () => {
 
  const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-
+  console.log('DEBUG')
   const { name, email, company, message } = formData;
 
   const { error } = await supabase.from('contacto_web').insert([
