@@ -114,7 +114,7 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info - Enhanced Visual Design */}
+          {/* Contact Info */}
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-white mb-6">Contáctanos</h3>
             {contactInfo.map((item, index) => {
@@ -170,32 +170,6 @@ const Contact = () => {
                 </Card>
               );
             })}
-
-            {/* Proceso visual */}
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-6 mt-8">
-              <h4 className="text-lg font-semibold text-white mb-6 text-center">Nuestro Proceso</h4>
-              <div className="space-y-6">
-                {["Solicitud", "Evaluación", "Colaboración"].map((etapa, i) => {
-                  const colores = ["from-huaiqs-blue to-blue-600", "from-huaiqs-purple to-purple-600", "from-huaiqs-cyan to-cyan-600"];
-                  const descripciones = [
-                    "Envías tu proyecto para evaluación",
-                    "Revisamos viabilidad y compatibilidad",
-                    "Iniciamos el trabajo conjunto"
-                  ];
-                  return (
-                    <div key={i} className="flex items-start space-x-4 group">
-                      <div className={`w-10 h-10 bg-gradient-to-r ${colores[i]} rounded-full flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="text-white text-sm font-bold">{i + 1}</span>
-                      </div>
-                      <div className="flex-1">
-                        <h5 className="text-white font-semibold mb-2 text-lg">{etapa}</h5>
-                        <p className="text-gray-300 text-sm leading-relaxed">{descripciones[i]}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
@@ -297,6 +271,30 @@ const Contact = () => {
                 )}
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Proceso visual - Movido aquí y en horizontal */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">Nuestro Proceso</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {["Solicitud", "Evaluación", "Colaboración"].map((etapa, i) => {
+              const colores = ["from-huaiqs-blue to-blue-600", "from-huaiqs-purple to-purple-600", "from-huaiqs-cyan to-cyan-600"];
+              const descripciones = [
+                "Envías tu proyecto para evaluación",
+                "Revisamos viabilidad y compatibilidad",
+                "Iniciamos el trabajo conjunto"
+              ];
+              return (
+                <div key={i} className="text-center group">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${colores[i]} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-white text-xl font-bold">{i + 1}</span>
+                  </div>
+                  <h4 className="text-white font-semibold mb-3 text-xl">{etapa}</h4>
+                  <p className="text-gray-300 text-sm leading-relaxed">{descripciones[i]}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
