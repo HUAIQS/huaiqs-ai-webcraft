@@ -27,4 +27,25 @@ const App = () => (
   </QueryClientProvider>
 );
 
+import React from "react";
+import Chat from "@/components/Chat";
+
+function App() {
+  return (
+    <>
+      <div>
+        <h1 style={{ color: "white", textAlign: "center", marginTop: "40px" }}>
+          Bienvenido a HUAIQS
+        </h1>
+        <p style={{ color: "gray", textAlign: "center" }}>
+          Este es el sitio oficial de automatización con IA ✨
+        </p>
+      </div>
+
+      {/* El chatbot flotante aparece en la esquina inferior derecha */}
+      <Chat />
+    </>
+  );
+}	
+
 export default App;
