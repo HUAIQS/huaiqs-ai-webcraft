@@ -9,7 +9,7 @@ import Index from "@/pages/Index";
 import CasoExito from "@/pages/CasoExito";
 import NotFound from "@/pages/NotFound";
 
-import Chat from "@/components/Chat"; // ✅ Tu chatbot
+import Chat from "./Chat"; // ✅ Tu chatbot
 
 const queryClient = new QueryClient();
 
