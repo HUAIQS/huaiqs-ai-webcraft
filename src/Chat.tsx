@@ -1,8 +1,11 @@
+
 import { useState } from "react";
+import { MessageCircle, X, Send } from "lucide-react";
 
 const Chat = () => {
   const [messages, setMessages] = useState<{ from: "user" | "bot"; text: string }[]>([]);
   const [input, setInput] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -32,42 +35,109 @@ const Chat = () => {
     setInput("");
   };
 
+  const toggleChat = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="fixed bottom-4 right-4 w-[320px] bg-white rounded-xl shadow-lg border border-gray-300 flex flex-col overflow-hidden">
-      <div className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple text-white font-semibold text-center py-2">
-        Chat HUAIQS
-      </div>
-      <div className="flex-1 overflow-y-auto p-3 space-y-2 text-sm max-h-[400px]">
-        {messages.map((msg, i) => (
-          <div
-            key={i}
-            className={`rounded-lg px-3 py-2 max-w-[80%] ${
-              msg.from === "user"
-                ? "ml-auto bg-huaiqs-blue text-white"
-                : "bg-gray-100 text-gray-800"
-            }`}
-          >
-            {msg.text}
-          </div>
-        ))}
-      </div>
-      <div className="flex border-t border-gray-200">
-        <input
-          type="text"
-          className="flex-1 px-3 py-2 text-sm outline-none"
-          placeholder="Escribe un mensaje..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-        />
+    <>
+      {/* Botón flotante circular */}
+      <div 
+        className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
+          isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'
+        }`}
+      >
         <button
-          className="bg-huaiqs-purple text-white px-4 text-sm"
-          onClick={sendMessage}
+          onClick={toggleChat}
+          className="w-16 h-16 bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:scale-110"
         >
-          Enviar
+          <MessageCircle className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-200" />
         </button>
+        
+        {/* Indicador de notificación (opcional) */}
+        {messages.length > 0 && (
+          <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            <span className="text-white text-xs font-bold">{messages.length}</span>
+          </div>
+        )}
       </div>
-    </div>
+
+      {/* Ventana de chat expandida */}
+      <div 
+        className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
+          isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+        }`}
+      >
+        <div className="w-80 h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden">
+          {/* Header del chat */}
+          <div className="bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple text-white p-4 flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                <MessageCircle className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm">Chat HUAIQS</h3>
+                <p className="text-xs text-white/80">En línea</p>
+              </div>
+            </div>
+            <button 
+              onClick={toggleChat}
+              className="w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center transition-colors duration-200"
+            >
+              <X className="w-5 h-5 text-white" />
+            </button>
+          </div>
+
+          {/* Área de mensajes */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+            {messages.length === 0 ? (
+              <div className="text-center text-gray-500 text-sm mt-8">
+                <MessageCircle className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+                <p>¡Hola! ¿En qué puedo ayudarte?</p>
+              </div>
+            ) : (
+              messages.map((msg, i) => (
+                <div
+                  key={i}
+                  className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
+                      msg.from === "user"
+                        ? "bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple text-white rounded-br-md"
+                        : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-bl-md"
+                    }`}
+                  >
+                    {msg.text}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          {/* Input de mensaje */}
+          <div className="p-4 bg-white border-t border-gray-100">
+            <div className="flex space-x-2">
+              <input
+                type="text"
+                className="flex-1 px-4 py-2 border border-gray-200 rounded-full text-sm outline-none focus:border-huaiqs-blue transition-colors duration-200"
+                placeholder="Escribe un mensaje..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+              />
+              <button
+                onClick={sendMessage}
+                disabled={!input.trim()}
+                className="w-10 h-10 bg-gradient-to-r from-huaiqs-blue to-huaiqs-purple text-white rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
