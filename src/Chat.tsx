@@ -120,7 +120,7 @@ const Chat = () => {
             <div className="flex space-x-2">
               <input
                 type="text"
-                className="flex-1 px-4 py-2 border border-gray-200 rounded-full text-sm outline-none focus:border-huaiqs-blue transition-colors duration-200"
+                className="flex-1 px-4 py-2 border border-gray-200 rounded-full text-sm text-gray-900 outline-none focus:border-huaiqs-blue transition-colors duration-200"
                 placeholder="Escribe un mensaje..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
