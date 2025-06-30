@@ -19,4 +19,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // <<< Añade esto para que el build vaya a docs/ >>>
+  build: {
+    outDir: "docs",      // Salida en la carpeta docs/
+    emptyOutDir: true,   // Limpia docs/ antes de generar
+  },
 }));
