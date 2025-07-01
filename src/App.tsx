@@ -18,7 +18,7 @@ const queryClient = new QueryClient();
 const App = () => {
   useEffect(() => {
     createChat({
-      webhookUrl: "https://bonorocky.app.n8n.cloud/webhook/aa1407db-ed34-4147-ba10-c05d333e2ca2/chat",
+      webhookUrl: "https://n8n-n8n.nnkddt.easypanel.host/webhook/aa1407db-ed34-4147-ba10-c05d333e2ca2/chat",
       defaultLanguage: "es",
       showWelcomeScreen: false,
       loadPreviousSession: true,
