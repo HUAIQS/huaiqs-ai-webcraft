@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -19,7 +20,7 @@ const App = () => {
   useEffect(() => {
     createChat({
       webhookUrl: "https://n8n-n8n.nnkddt.easypanel.host/webhook/aa1407db-ed34-4147-ba10-c05d333e2ca2/chat",
-      defaultLanguage: "es",
+      defaultLanguage: "en",
       showWelcomeScreen: false,
       loadPreviousSession: true,
       initialMessages: [
@@ -33,6 +34,7 @@ const App = () => {
           footer: "HUAIQS - Inteligencia Aplicada",
           getStarted: "Iniciar conversación",
           inputPlaceholder: "Escribe tu mensaje aquí...",
+          closeButtonTooltip: "Cerrar chat"
         }
       }
     });
@@ -56,4 +58,3 @@ const App = () => {
 };
 
 export default App;
-
