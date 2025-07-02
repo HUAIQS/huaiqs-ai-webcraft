@@ -1,4 +1,3 @@
-
 import { Users, Target, Award, TrendingUp } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -6,7 +5,7 @@ const About = () => {
   const stats = [
     {
       icon: Users,
-      number: "50+",
+      number: "15+",
       label: "Clientes Satisfechos",
       color: "text-huaiqs-blue"
     },
@@ -18,7 +17,7 @@ const About = () => {
     },
     {
       icon: Award,
-      number: "15+",
+      number: "10+",
       label: "Proyectos Exitosos",
       color: "text-huaiqs-cyan"
     },
