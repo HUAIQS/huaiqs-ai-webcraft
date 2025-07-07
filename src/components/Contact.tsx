@@ -16,33 +16,32 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  console.log('DEBUG')
-  const { name, email, company, message } = formData;
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('DEBUG')
+    const { name, email, company, message } = formData;
 
-  const { error } = await supabase.from('contacto_web').insert([
-    {
-      nombre: name,
-      email: email,
-      empresa: company,
-      mensaje: message
+    const { error } = await supabase.from('contacto_web').insert([
+      {
+        nombre: name,
+        email: email,
+        empresa: company,
+        mensaje: message
+      }
+    ]);
+
+    if (error) {
+      console.error('❌ Supabase insert error:', JSON.stringify(error, null, 2));
+      alert("Hubo un problema al enviar tu solicitud. Intenta más tarde.");
+      return;
     }
-  ]);
 
-  if (error) {
-    console.error('❌ Supabase insert error:', JSON.stringify(error, null, 2));
-    alert("Hubo un problema al enviar tu solicitud. Intenta más tarde.");
-    return;
-  }
+    console.log('✅ Formulario enviado correctamente');
 
-
-  console.log('✅ Formulario enviado correctamente');
-
-  setIsSubmitted(true);
-  setTimeout(() => setIsSubmitted(false), 3000);
-  setFormData({ name: '', email: '', company: '', message: '' });
-};
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+    setFormData({ name: '', email: '', company: '', message: '' });
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -174,7 +173,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="dark-card border-0 shadow-2xl">
+            <Card className="bg-huaiqs-gray border-huaiqs-light-gray shadow-2xl">
               <CardHeader>
                 <CardTitle className="text-2xl text-center text-white">
                   Solicita Evaluación de tu Proyecto
@@ -266,7 +265,6 @@ const Contact = () => {
                       Enviar Solicitud para Evaluación
                       <Send className="ml-2 h-5 w-5" />
                     </button>
-
                   </form>
                 )}
               </CardContent>
@@ -274,7 +272,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Proceso visual - Movido aquí y en horizontal */}
+        {/* Proceso visual */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">Nuestro Proceso</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
