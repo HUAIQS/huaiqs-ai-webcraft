@@ -64,10 +64,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				huaiqs: {
-					blue: '#0066FF',
-					purple: '#6366F1',
-					cyan: '#06B6D4',
-					dark: '#0F172A'
+				  blue: '#0066FF',
+				  purple: '#6366F1',
+				  cyan: '#06B6D4',
+				  dark: '#0F172A',
+				  darker: '#020617',
+				  gray: '#1E293B',
+				  lightgray: '#334155'
 				}
 			},
 			borderRadius: {
