@@ -70,7 +70,8 @@ export default {
 				  dark: '#0F172A',
 				  darker: '#020617',
 				  gray: '#1E293B',
-				  lightgray: '#334155'
+				  lightgray: '#334155',
+				  mediumgray: '#1E293B'
 				}
 			},
 			borderRadius: {
