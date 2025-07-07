@@ -87,7 +87,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 section-darker">
+    <section id="contacto" className="py-20 bg-huaiqs-darker">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
