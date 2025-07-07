@@ -21,7 +21,6 @@ const Footer = () => {
     empresa: [
       { name: 'Sobre Nosotros', href: '#nosotros' },
       { name: 'Nuestros Servicios', href: '#servicios' },
-      { name: 'Portfolio', href: '#portfolio' },
       { name: 'Recursos', href: '#recursos' },
       { name: 'Contacto', href: '#contacto' },
     ],
@@ -115,7 +114,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-huaiqs-blue" />
                 <a href="mailto:hugo@huaiqs.com" className="text-gray-300 hover:text-white transition-colors">
-                  hhuaiqs@gmail.com
+                  hugo@huaiqs.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
