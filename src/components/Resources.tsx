@@ -73,7 +73,7 @@ const Resources = () => {
         {/* Featured Article */}
         <div className="mb-16">
           {articles.filter(article => article.featured).map((article, index) => (
-            <Card key={index} className="dark-card border-0 overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+            <Card key={index} className="bg-huaiqs-gray border-huaiqs-lightgray border overflow-hidden hover:shadow-2xl transition-all duration-300 group">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                 <div className="relative">
                   <img 
@@ -90,7 +90,7 @@ const Resources = () => {
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
-                    <span className="px-3 py-1 bg-huaiqs-gray rounded-full">{article.category}</span>
+                    <span className="px-3 py-1 bg-huaiqs-lightgray rounded-full text-gray-300">{article.category}</span>
                     <div className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
                       {article.readTime}
@@ -118,7 +118,7 @@ const Resources = () => {
           <h3 className="text-2xl font-bold text-white mb-8">Noticias Recientes</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.filter(article => !article.featured).map((article, index) => (
-              <Card key={index} className="dark-card border-0 overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
+              <Card key={index} className="bg-huaiqs-gray border-huaiqs-lightgray border overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
                 <div className="relative">
                   <img 
                     src={article.image} 
@@ -129,7 +129,7 @@ const Resources = () => {
                 </div>
                 <CardContent className="p-4">
                   <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
-                    <span className="px-2 py-1 bg-huaiqs-gray rounded-full">{article.category}</span>
+                    <span className="px-2 py-1 bg-huaiqs-lightgray rounded-full text-gray-300">{article.category}</span>
                     <div className="flex items-center gap-1">
                       <Clock className="h-3 w-3" />
                       {article.readTime}
