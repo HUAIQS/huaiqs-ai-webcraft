@@ -49,7 +49,7 @@ const Header = () => {
               Nosotros
             </button>
             <button
-              onClick={() => scrollToSection('recursos')}
+              onClick={() => scrollToSection('blog')}
               className="text-blue-700 hover:text-blue-900 transition-colors font-semibold tracking-wide hover:scale-105 transform duration-200 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-blue-800 after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full"
             >
               Blog
@@ -105,7 +105,7 @@ const Header = () => {
                 Nosotros
               </button>
               <button
-                onClick={() => scrollToSection('recursos')}
+                onClick={() => scrollToSection('blog')}
                 className="text-left text-blue-700 hover:text-blue-900 transition-colors font-semibold py-2 hover:bg-blue-50 rounded-lg px-3"
               >
                 Blog
