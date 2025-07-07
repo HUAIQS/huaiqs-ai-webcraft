@@ -120,7 +120,7 @@ const Contact = () => {
             {contactInfo.map((item, index) => {
               const IconComponent = item.icon;
               return (
-                <Card key={index} className="bg-white border-0 overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <Card key={index} className="bg-huaiqs-gray border-huaiqs-light-gray overflow-hidden group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                   <CardContent className="p-0">
                     <div className="relative">
                       {/* Gradient Background */}
@@ -134,8 +134,8 @@ const Contact = () => {
                               <IconComponent className="h-6 w-6 text-white" />
                             </div>
                             <div>
-                              <h4 className="font-bold text-black text-lg">{item.title}</h4>
-                              <p className="text-gray-600 text-sm">{item.description}</p>
+                              <h4 className="font-bold text-white text-lg">{item.title}</h4>
+                              <p className="text-gray-400 text-sm">{item.description}</p>
                             </div>
                           </div>
                           
@@ -145,7 +145,7 @@ const Contact = () => {
                               variant="ghost"
                               size="sm"
                               onClick={() => copyToClipboard(item.info, item.title)}
-                              className="text-gray-600 hover:text-black opacity-0 group-hover:opacity-100 transition-all duration-300"
+                              className="text-gray-400 hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-300"
                             >
                               <Copy className="h-4 w-4" />
                             </Button>
@@ -156,7 +156,7 @@ const Contact = () => {
                         <div className="ml-16">
                           <a 
                             href={item.link}
-                            className="text-black font-medium text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-huaiqs-blue hover:to-huaiqs-purple transition-all duration-300 flex items-center group/link"
+                            className="text-white font-medium text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-huaiqs-blue hover:to-huaiqs-purple transition-all duration-300 flex items-center group/link"
                           >
                             {item.info}
                             {item.title !== "Ubicación" && (
