@@ -63,8 +63,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      info: "hhuaiqs@gmail.com",
-      link: "mailto:hhuaiqs@gmail.com",
+      info: "hugo@huaiqs.com",
+      link: "mailto:hugo@huaiqs.com",
       description: "Respuesta en 24-48 horas",
       color: "from-blue-500 to-cyan-500"
     },
