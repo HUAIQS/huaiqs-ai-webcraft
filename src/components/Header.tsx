@@ -23,7 +23,7 @@ const Header = () => {
             <div className="relative w-12 h-12 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 rounded-lg flex items-center justify-center shadow-lg">
               <img src="/lovable-uploads/11aa6506-b8cc-4ec6-9a54-f2d3c0676810.png" alt="HUAIQS Logo" className="h-7 w-7" />
             </div>
-            <span className="text-2xl font-medium tracking-wide text-gray-900 hover:text-blue-700 transition-colors duration-300">
+            <span className="text-2xl font-bold tracking-widest text-slate-800 hover:text-blue-600 transition-colors duration-300 font-mono uppercase">
               HUAIQS
             </span>
           </div>
