@@ -20,8 +20,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="relative w-12 h-12 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 rounded-lg flex items-center justify-center shadow-lg">
-              <img src="/lovable-uploads/11aa6506-b8cc-4ec6-9a54-f2d3c0676810.png" alt="HUAIQS Logo" className="h-7 w-7" />
+            <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg">
+              <img src="/lovable-uploads/dee26f01-6925-42a6-9880-2942d1092b5a.png" alt="HUAIQS Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-bold tracking-wide text-blue-700 hover:text-blue-900 transition-colors duration-300">
               HUAIQS
